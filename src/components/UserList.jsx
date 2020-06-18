@@ -1,28 +1,16 @@
-import React, { useState } from "react";
-import UserDetail from "./UserDetail";
+import React from "react";
 
-function UserList({ userData }) {
-  const [user, setUser] = useState(userData[0]);
-
+function UserList({ userData, onClick }) {
   return (
-    <div>
-      <ul>
-        {userData.map((user) => {
-          return (
-            <li
-              onClick={() => {
-                setUser(user);
-              }}
-              key={user.login.uuid}
-            >
-              {user.name.first + " " + user.name.last}
-            </li>
-          );
-        })}
-      </ul>
-
-      <UserDetail clickedUser={user} />
-    </div>
+    <ul>
+      {userData.map((user) => {
+        return (
+          <li onClick={() => onClick(user)} key={user.login.uuid}>
+            {user.name.first + " " + user.name.last}
+          </li>
+        );
+      })}
+    </ul>
   );
 }
 
