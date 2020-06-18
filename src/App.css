@@ -38,6 +38,11 @@ img {
   text-align: left;
 }
 
+.getUser-btn {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+
 .top {
   border-radius: 25px 25px 0 0;
   height: 100px;
